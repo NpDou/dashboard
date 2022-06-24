@@ -79,6 +79,7 @@ export default {
         onManager: this.onManager,
         hideField: true,
         addLock: true,
+        fixed: 'left',
         addEncrypt: true,
         addBackup: true,
         formRules: [
@@ -253,9 +254,9 @@ export default {
         slots: {
           default: ({ row }) => {
             if (row.cpu_usage) {
-              return [<a-progress percent={ row.cpu_usage.toFixed(4) * 100 } size="small" />]
+              return [<a-progress format={ (percent) => percent + '%' } class="special_progress" percent={ (row.cpu_usage * 100).toFixed(2) } strokeColor="#1890ff" size="small" />]
             }
-            return [<a-progress percent={ 0 } size="small" />]
+            return '--'
           },
         },
       },
@@ -267,9 +268,9 @@ export default {
         slots: {
           default: ({ row }) => {
             if (row.mem_usage) {
-              return [<a-progress percent={ row.mem_usage.toFixed(4) * 100 } size="small" />]
+              return [<a-progress format={ (percent) => percent + '%' } class="special_progress" percent={ (row.mem_usage * 100).toFixed(2) } strokeColor="#1890ff" size="small" />]
             }
-            return [<a-progress percent={ 0 } size="small" />]
+            return '--'
           },
         },
       },
@@ -281,9 +282,9 @@ export default {
         slots: {
           default: ({ row }) => {
             if (row.disk_usage) {
-              return [<a-progress percent={ row.disk_usage.toFixed(4) * 100 } size="small" />]
+              return [<a-progress format={ (percent) => percent + '%' } class="special_progress" percent={ (row.disk_usage * 100).toFixed(2) } strokeColor="#1890ff" size="small" />]
             }
-            return [<a-progress percent={ 0 } size="small" />]
+            return '--'
           },
         },
       },

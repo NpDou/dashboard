@@ -294,9 +294,9 @@ export default {
         })
       }
       if (this.checkboxEnabled) {
-        defaultColumns.unshift({ type: 'checkbox', width: 40, showHeaderOverflow: false, resizable: false })
+        defaultColumns.unshift({ type: 'checkbox', width: 40, fixed: 'left', showHeaderOverflow: false, resizable: false })
       } else if (this.radioEnabled) {
-        defaultColumns.unshift({ type: 'radio', width: 40, showHeaderOverflow: false, resizable: false })
+        defaultColumns.unshift({ type: 'radio', width: 40, fixed: 'left', showHeaderOverflow: false, resizable: false })
       }
       if (this.beforeShowMenuLoaded && this.showSingleActions && this.singleActions && this.singleActions.length) {
         defaultColumns.push({
