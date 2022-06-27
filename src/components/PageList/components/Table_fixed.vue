@@ -339,6 +339,7 @@ export default {
                   props: {
                     options: this.singleActions,
                     row,
+                    fixed: this.fixed,
                     buttonType: 'link',
                     buttonSize: 'small',
                     buttonStyle: {
