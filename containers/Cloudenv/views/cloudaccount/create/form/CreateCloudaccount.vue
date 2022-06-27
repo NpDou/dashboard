@@ -18,6 +18,7 @@ import HCSO from './components/HCSO'
 import Nutanix from './components/Nutanix'
 import Winstack from './components/Winstack'
 import BingoCloud from './components/BingoCloud'
+import InCloudSphere from './components/InCloudSphere'
 
 export default {
   name: 'CreateCloudaccount',
@@ -45,6 +46,7 @@ export default {
     NutanixCreate: Nutanix,
     WinstackCreate: Winstack,
     BingoCloudCreate: BingoCloud,
+    InCloudSphereCreate: InCloudSphere,
   },
   props: {
     currentItem: {

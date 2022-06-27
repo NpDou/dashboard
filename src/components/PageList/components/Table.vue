@@ -26,6 +26,7 @@
           :tooltip-config="{ showAll: false }"
           :expand-config="expandConfig"
           :span-method="spanMethod"
+          :sync-resize="treeToggleOpen"
           @sort-change="handleSortChange"
           v-on="dynamicEvents"
           v-bind="dynamicProps">
@@ -357,7 +358,7 @@ export default {
         await this.$refs.grid.recalculate(true)
         const tableBodyEl = gridEl.querySelector('.vxe-table--body-wrapper .vxe-table--body')
         const tableBodyWidth = tableBodyEl.getBoundingClientRect().width
-        if (tableBodyWidth) this.tableWidth = tableBodyWidth
+        if (tableBodyWidth) this.tableWidth = tableBodyWidth - 15
         gridEl && this.$bus.$emit('FloatingScrollUpdate', {
           sourceElement: gridEl,
         })

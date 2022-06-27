@@ -24,6 +24,7 @@ const cloudpodsLogo = require('../../../../src/assets/images/providers/cloudpods
 const hcsoLogo = require('../../../../src/assets/images/providers/hcso.svg')
 const nutanixLogo = require('../../../../src/assets/images/providers/nutanix.svg')
 const bingocloudLogo = require('../../../../src/assets/images/providers/bingocloud.svg')
+const incloudsphereLogo = require('../../../../src/assets/images/providers/incloudsphere.svg')
 
 function getDocsCloudaccountPath (scope) {
   const docsUrl = getDocsUrl(scope)
@@ -158,6 +159,16 @@ export const CLOUDACCOUNT_TYPES = {
         width: '100px',
       },
     },
+    incloudsphere: {
+      name: providerMap.incloudsphere.label,
+      logo: incloudsphereLogo,
+      component: 'InCloudSphereCreate',
+      provider: providerMap.incloudsphere.key,
+      hiddenName: true,
+      logoStyle: {
+        width: '100px',
+      },
+    },
   },
   storage: {
     s3: {
@@ -214,6 +225,7 @@ export function getCloudaccountDocs (scope) {
     nutanix: i18n.t('cloudenv.create_nutanix', [docs_path]),
     winstack: i18n.t('cloudenv.text_132', [docs_path]),
     bingocloud: i18n.t('cloudenv.create_bingocloud', [docs_path]),
+    incloudsphere: i18n.t('cloudenv.create_incloudsphere', [docs_path]),
   }
   if (isCE()) {
     Object.keys(docs).forEach(v => {
@@ -555,6 +567,19 @@ export const keySecretFields = {
       s: i18n.t('cloudenv.text_147'),
     },
   },
+  incloudsphere: {
+    k: 'access_key_id',
+    s: 'access_key_secret',
+    text: i18n.t('cloudenv.incloudsphere'),
+    placeholder: {
+      k: i18n.t('scope.encrypt_key.require_name.prompt'),
+      s: i18n.t('scope.encrypt_value.require_name.prompt'),
+    },
+    label: {
+      k: i18n.t('scope.encrypt_key.title.name'),
+      s: i18n.t('scope.encrypt_value.title.name'),
+    },
+  },
 }
 
 export function getBillBucketUrlDocs (scope) {
@@ -591,4 +616,5 @@ export const notSupportSelectRegion = [
   providerMap.apsara.key,
   providerMap.cloudpods.key,
   providerMap.hcso.key,
+  providerMap.incloudsphere.key,
 ]

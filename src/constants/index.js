@@ -18,6 +18,7 @@ export const HYPERVISORS = [
   { key: 'nutanix', label: i18n.t('scopeCloudPrvidersMap.Nutanix'), provider: 'Nutanix', brand: 'Nutanix', host_type: 'nutanix', hypervisor: 'nutanix', env: 'private', cloud_env: 'private' },
   { key: 'bingocloud', label: i18n.t('scopeCloudPrvidersMap.BingoCloud'), provider: 'BingoCloud', brand: 'BingoCloud', host_type: 'bingocloud', hypervisor: 'bingocloud', env: 'private', cloud_env: 'private' },
   { key: 'winstack', label: 'winstack', provider: 'WinStack', brand: 'WinStack', host_type: 'winstack', hypervisor: 'winstack', env: 'private', cloud_env: 'private' },
+  { key: 'incloudsphere', label: 'InCloudSphere', provider: 'InCloudSphere', brand: 'InCloudSphere', host_type: 'incloudsphere', hypervisor: 'incloudsphere', env: 'private', cloud_env: 'private' },
   // Public
   { key: 'aliyun', label: i18n.t('scopeCloudPrvidersMap.Aliyun'), provider: 'Aliyun', brand: 'Aliyun', host_type: 'aliyun', hypervisor: 'aliyun', env: 'public', cloud_env: 'public' },
   { key: 'azure', label: 'Azure', provider: 'Azure', brand: 'Azure', host_type: 'azure', hypervisor: 'azure', env: 'public', cloud_env: 'public' },
@@ -78,6 +79,7 @@ export const HYPERVISORS_GROUP = {
     nutanix: HYPERVISORS_MAP.nutanix,
     bingocloud: HYPERVISORS_MAP.bingocloud,
     winstack: HYPERVISORS_MAP.winstack,
+    incloudsphere: HYPERVISORS_MAP.incloudsphere,
   },
   public: {
     aliyun: HYPERVISORS_MAP.aliyun,
