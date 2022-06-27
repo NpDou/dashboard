@@ -54,6 +54,22 @@ export default {
             },
           ],
         },
+        {
+          name: 'RDSPlatform',
+          path: '/rds',
+          meta: {
+            label: i18n.t('dictionary.dbinstance'),
+            method: 'href',
+            permission: 'rds_dbinstances_list',
+            t: 'dictionary.dbinstance',
+            hidden: () => {
+              if (isScopedPolicyMenuHidden('sub_hidden_menus.rds')) {
+                return true
+              }
+              return !hasSetupKey(['aliyun', 'huawei', 'google', 'aws', 'qcloud', 'apsara', 'azure', 'hcso'])
+            },
+          },
+        },
         /* {
           path: '/rdsbackup',
           component: Layout,

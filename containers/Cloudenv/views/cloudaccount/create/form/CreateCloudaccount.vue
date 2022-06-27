@@ -16,6 +16,7 @@ import Apsara from './components/Apsara'
 import Cloudpods from './components/Cloudpods'
 import HCSO from './components/HCSO'
 import Nutanix from './components/Nutanix'
+import Winstack from './components/Winstack'
 import BingoCloud from './components/BingoCloud'
 
 export default {
@@ -42,6 +43,7 @@ export default {
     CloudpodsCreate: Cloudpods,
     HCSOCreate: HCSO,
     NutanixCreate: Nutanix,
+    WinstackCreate: Winstack,
     BingoCloudCreate: BingoCloud,
   },
   props: {

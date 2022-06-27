@@ -27,18 +27,24 @@
               class="l2-menu-group"
               v-if="l2.submenus">
               <div class="l2-menu-group-title" :title="getLabel(l2.meta)">{{ getLabel(l2.meta) }}</div>
-              <router-link
-                v-for="(sitem, sidx) of l2.submenus"
-                v-show="showMenu(sitem)"
-                :key="sidx"
-                class="l2-menu-item text-truncate"
-                :to="sitem.path"
-                :title="getLabel(sitem.meta)"
-                tag="a"
-                active-class="active"
-                @click.native="handleL2LinkClick">
-                {{ getLabel(sitem.meta) }}
-              </router-link>
+              <template
+                v-for="(sitem, sidx) of l2.submenus">
+                <span href="#" :key="sidx" v-if="sitem.meta&&sitem.meta.method==='href'">
+                  {{ getLabel(sitem.meta) }}11
+                </span>
+                <router-link
+                  v-else
+                  v-show="showMenu(sitem)"
+                  :key="sidx"
+                  class="l2-menu-item text-truncate"
+                  :to="sitem.path"
+                  :title="getLabel(sitem.meta)"
+                  tag="a"
+                  active-class="active"
+                  @click.native="handleL2LinkClick">
+                  {{ getLabel(sitem.meta) }}
+                </router-link>
+              </template>
             </div>
             <router-link
               v-else

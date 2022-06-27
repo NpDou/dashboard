@@ -190,6 +190,7 @@ export default {
       }
       // 套餐去重
       const skuSet = new Set()
+      console.log(this.skuList, '-------')
       for (let i = 0, len = this.skuList.length; i < len; i++) {
         const item = this.skuList[i]
         const flag = `${item.name}-${item.provider}-${item.region_ext_id}`
@@ -238,6 +239,7 @@ export default {
       return ret
     },
     skuResults () {
+      console.log(this.canSkuShow, '======', this.skuInfo.skuOptions)
       if (!this.canSkuShow) return []
       const ret = this.skuInfo.skuOptions[this.skuType]
       if (ret && ret.length > 0 && ret[0].hour_price) {

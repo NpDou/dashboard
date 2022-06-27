@@ -142,6 +142,12 @@ export const CLOUDACCOUNT_TYPES = {
       component: 'NutanixCreate',
       provider: providerMap.nutanix.key,
     },
+    winstack: {
+      name: providerMap.winstack.label,
+      logo: nutanixLogo,
+      component: 'WinstackCreate',
+      provider: providerMap.winstack.key,
+    },
     bingocloud: {
       name: providerMap.bingocloud.label,
       logo: bingocloudLogo,
@@ -206,6 +212,7 @@ export function getCloudaccountDocs (scope) {
     cloudpods: i18n.t('cloudenv.create_cloudpods', [docs_path]),
     hcso: i18n.t('cloudenv.create_hcso', [docs_path]),
     nutanix: i18n.t('cloudenv.create_nutanix', [docs_path]),
+    winstack: i18n.t('cloudenv.text_132', [docs_path]),
     bingocloud: i18n.t('cloudenv.create_bingocloud', [docs_path]),
   }
   if (isCE()) {
@@ -522,6 +529,19 @@ export const keySecretFields = {
       s: i18n.t('cloudenv.text_147'),
     },
   },
+  winstack: {
+    k: 'username',
+    s: 'password',
+    text: 'winstack',
+    placeholder: {
+      k: i18n.t('cloudenv.text_151'),
+      s: i18n.t('cloudenv.text_150'),
+    },
+    label: {
+      k: i18n.t('cloudenv.text_94'),
+      s: i18n.t('cloudenv.text_147'),
+    },
+  },
   bingocloud: {
     k: 'access_key_id',
     s: 'access_key_secret',
@@ -560,6 +580,7 @@ export function getEnrollmentNumberDocs (scope) {
 export const notSupportSelectRegion = [
   providerMap.vmware.key,
   providerMap.nutanix.key,
+  providerMap.winstack.key,
   providerMap.ceph.key,
   providerMap.s3.key,
   providerMap.xsky.key,
